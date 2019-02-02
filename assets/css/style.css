@@ -1,0 +1,15 @@
+.carre{
+    height: 87px;
+    width: 10%;
+    background-color: red;
+    position   : absolute;
+    top: 40px;
+}
+.carre2{
+    height: 87px;
+    width: 10%;
+    background-color: red;
+    position   : absolute;
+    top: 40px;
+    left: -144px;
+}

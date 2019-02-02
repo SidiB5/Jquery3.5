@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Exercice 5</title>
+</head>
+<body>
+    <form>
+        <div class="carre"></div>
+        <div class="carre2"></div>
+        <label for="Test">Faîte bouger le carré rouge  <input type="text" id="direction"></label>
+    </form>
+    <script>
+        $(document).ready(() => {
+            $('#direction').keydown(function(event){
+                var $position = $('.carre').position().left;
+                var $position2 = $('.carre2').position().left;
+                // Mouvement RIGHT et position carré 1
+                if(event.which == 39 && $position <= 1298 && $position >= 0 ){
+                    $('.carre').animate({'left':'+=10px'});                   
+                }else if(event.which == 39 && $position >= 1298 && $position <= 1308 ){
+                    $('.carre2').animate({'left':'-144px'});
+                    $('.carre').animate({'left':'+=10px'});
+                }else if(event.which == 39 && $position >= 1308 && $position <= 1452 ){
+                    $('.carre').animate({'left':'+=10px'});
+                    $('.carre2').animate({'left':'+=10px'});
+                // Mouvement RIGHT et position carré 2
+                }else if(event.which == 39 && $position2 <= 1298){
+                    $('.carre2').animate({'left':'+=10px'});                   
+                }else if(event.which == 39 && $position2 >= 1298 && $position2 <= 1308 ){
+                    $('.carre').animate({'left':'-144px'});
+                    $('.carre2').animate({'left':'+=10px'});
+                }else if(event.which == 39 && $position2 >= 1308 && $position2 <= 1466 ){
+                    $('.carre2').animate({'left':'+=10px'});
+                    $('.carre').animate({'left':'+=10px'});
+                // Mouvement LEFT et position carré 1
+                }else if(event.which == 37 && $position >= 0){
+                    $('.carre').animate({'left':'-=10px'});
+                }else if(event.which == 37 && $position <= 0 && $position > -10){
+                    $('.carre2').animate({'left':'1442px'});
+                    $('.carre').animate({'left':'-=10px'});
+                    console.log($position);
+                    console.log($position2);
+                }else if(event.which == 37  && $position <= -10){
+                    $('.carre').animate({'left':'-=10px'});
+                    $('.carre2').animate({'left':'-=10px'});
+                    console.log($position);
+                    console.log($position2);
+                // }else if(event.which == 38){
+                //     $('.carre').animate({'top':'-=10px'});
+                // }else if(event.which == 40){
+                //     $('.carre').animate({'top':'+=10px'});
+                }
+            });
+        });
+    </script>
+</body>
+</html>
